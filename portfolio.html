@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="src/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500" rel="stylesheet">    <link href="src/main.min.css" rel="stylesheet">
+    <title>Echo's Portfolio</title>
+</head>
+
+<body style="background-color:rgba(84, 84, 84, 0.07);">
+    <div class="port-container">
+        <div class="main">
+            <p>My name is <b>Echo</b>, and I am <b>Web Developer</b>, focus on <b>UI/UX</b>, heavyly working with <b>JavaScript</b>.</p>
+            <p>I do website development, 👇 <a href="http://inkster.com/" target="_blank">inkster.com</a> written in <i>React, Node & Webpack</i>.</p>
+            <section>
+                <img data-gifffer="src/inkster.gif" />
+            </section>
+            <p>I do logo design 👇 in <i>Sketch</i></p>
+            <section>
+                <img data-gifffer="src/logo.gif" />
+            </section>
+            <p>Clients: <span style="font-weight:400">informedy, inkster, etc.</span></p>
+        </div>
+        <footer>
+            <span>designed by <a href="https://github.com/echooocc/echooocc.github.io" target="_blank">&#128054;</a></span><br>
+        </footer>
+    </div>
+    <script type="text/javascript" src="js/lib/gifffer.min.js"></script>
+    <script>
+        window.onload = function() {
+            Gifffer({
+              playButtonStyles: {
+                'width': '60px',
+                'height': '60px',
+                'border-radius': '30px',
+                'background': 'rgba(0, 0, 0, 0.5)',
+                'position': 'absolute',
+                'top': '50%',
+                'left': '50%',
+                'margin': '-30px 0 0 -30px'
+              },
+              playButtonIconStyles: {
+                'width': '0',
+                'height': '0',
+                'border-top': '14px solid transparent',
+                'border-bottom': '14px solid transparent',
+                'border-left': '14px solid rgba(0, 0, 0, 0.5)',
+                'position': 'absolute',
+                'left': '26px',
+                'top': '16px'
+              }
+            });
+        }
+
+    </script>
+</body>
+
+</html>

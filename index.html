@@ -4,34 +4,36 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="src/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link href="src/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.min.css">
+    <title>Echo Yu's personal website</title>
 </head>
 
-<body>
-    <title>Echo Yu's personal website</title>
+<body class="home">
     <div class="container">
-        <header>
-            <img class="logo" alt="logo" />
-        </header>
+        <div class="toggle"><a href="portfolio.html">works🚀</a></div>  
         <div class="main">
             <ul class="intro">
-                <li>is a Programmer</li>
+                <li><b>Echo🙊</b> is a Programmer</li>
                 <li>who loves <b>coding</b> and <b>design</b>,</li>
                 <li>use <a href="https://github.com/echooocc" target="_blank">Github</a></li>
                 <li>& <a href="https://ca.linkedin.com/in/echo-yu-35969526" target="_blank">Linkedin</a></li>
                 <li>& <a href="mailto:echo.yu.eyu@gmail.com">Gmail</a></li>
             </ul>
             <div class="lists">
+                <span class="verb">Working at </span>
+                <ul class="company">
+                    <li><a href="https://www.tencent.com" target="_blank" style="font-weight:700">Tencent</a></li>
+                </ul>
+            </div>
+            <div class="lists">
                 <span class="verb">Worked at</span>
                 <ul class="company">
                     <li><a href="http://www.architech.ca/" target="_blank">Architech</a></li>
                     <li><a href="http://www.xe.com" target="_blank">XE.com</a></li>
-                    <li><a href="http://catchchat.me/" target="_blank">CatchChat</a></li>
                     <li><a href="http://www.wifarer.com/" target="_blank">Wifarer</a></li>
                     <li><a href="http://ca.blackberry.com/" target="_blank">Blackberry</a></li>
                 </ul>
@@ -42,13 +44,13 @@
                 <span class="intro"><a class="verb" href="https://calendly.com/chatwithecho" target="_blank">Click</a> to schedule a meeting with Echo!</span>
             </div>
         </div>
-        <footer>
-            <!--<span>designed by <a href="https://github.com/echooocc/echooocc.github.io/tree/design" target="_blank">&#128054;</a></span><br>-->
-            <span>talk to her <a href="https://webchat.botframework.com/embed/echo_resume_bot?s=l__SbGRHFWo.cwA.EbM.1hn2koj9gEcr_UVk3nLpnO91lxzlvvWASMm9FPfqDMg" target="_blank">&#129302;</a></span>
-        </footer>
     </div>
 
-
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- scripts -->
+    <script src="js/lib/particles.min.js"></script>
+    <script src="js/app.js"></script>
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
