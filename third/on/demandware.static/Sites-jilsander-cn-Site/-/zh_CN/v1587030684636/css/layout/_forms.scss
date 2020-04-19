@@ -1,0 +1,314 @@
+@import "../../../node_modules/foundation-sites/scss/forms/select";
+@include foundation-form-select;
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    margin: 0;
+    padding: 6px 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+
+    @include breakpoint(medium down) {
+        font-size: rem-calc(14);
+    }
+}
+
+textarea {
+    border: 1px solid $light-gray;
+
+    &.spaced-top {
+        margin-top: 10px !important;
+    }
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 0;
+    border-bottom: 1px solid $black;
+    outline: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.item-input {
+    margin: 15px 0 0;
+    width: 100%;
+    position: relative;
+
+    .password-visibility-toggle {
+        position: absolute;
+        right: 0;
+        top: 6px;
+        opacity: 0.45;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .eye-off {
+            display: none;
+        }
+
+        &.password-visible {
+            .eye {
+                display: none;
+            }
+
+            .eye-off {
+                display: block;
+            }
+        }
+    }
+
+    .info-text {
+        color: map_get($jil-palette, "dark-gray");
+        padding: 12px 0;
+        display: block;
+    }
+}
+
+.item-button {
+    margin: 30px 0 0;
+}
+
+.item-text {
+    padding: 12px 0;
+}
+
+// Style for checkbox and radio button
+
+@mixin style-check($top, $left, $w, $h) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: $w;
+    height: $h;
+}
+
+// Checkbox
+
+.form-padding {
+    padding: 30px 0;
+}
+
+.form-field {
+    display: inline-block;
+    position: relative;
+    margin-right: 18px;
+
+    &.single-row {
+        display: flex;
+        margin-right: 0;
+        flex-wrap: wrap;
+    }
+
+    &.lesser {
+        opacity: 0.5;
+    }
+
+    input[type="checkbox"] {
+        opacity: 0;
+        margin: 0;
+        z-index: 1;
+
+        @include style-check(0, 0, 100%, 100%);
+    }
+
+    &.has-links {
+        input[type="checkbox"] {
+            width: 18px;
+        }
+    }
+
+    input[type="checkbox"] + .checkbox-label {
+        margin-left: 18px;
+        line-height: 1.5;
+
+        @include breakpoint(small only) {
+            font-size: rem-calc(14);
+        }
+
+        &::before {
+            content: "";
+            background: transparent;
+            border: 1px solid $primary-color;
+
+            @include style-check(2px, 0, 10px, 10px);
+        }
+
+        &::after {
+            content: "";
+            background: $primary-color;
+            opacity: 0;
+
+            @include style-check(5px, 3px, 4px, 4px);
+        }
+    }
+
+    input[type="checkbox"]:checked + .checkbox-label {
+        &::after {
+            content: "";
+            opacity: 1;
+        }
+    }
+}
+
+// Radio button
+
+.radio-group {
+    .radiobtn {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 50%;
+
+        @include style-check(2px, 0, 10px, 10px);
+
+        &::after {
+            content: "";
+            display: none;
+            border-radius: 50%;
+            background: $primary-color;
+
+            @include style-check(2px, 2px, 4px, 4px);
+        }
+    }
+
+    .radio-container {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin-right: 10px;
+
+        &.radio-card {
+            padding: 15px 15px 13px;
+            margin: 15px 0;
+            border: 1px solid $light-gray;
+            display: block;
+
+            @include breakpoint(small only) {
+                font-size: rem-calc(14);
+            }
+
+            .radiobtn {
+                border-radius: 50%;
+                position: absolute;
+                top: 16px;
+                left: 15px;
+            }
+
+            &:hover {
+                border: 1px solid $primary-color;
+
+                .radiobtn {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .foldout {
+            margin: 25px;
+            display: none;
+        }
+    }
+
+    .caption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 25px;
+
+        .lesser {
+            opacity: 0.5;
+        }
+    }
+
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        margin: 0;
+    }
+
+    input[type="radio"]:checked ~ .radiobtn::after {
+        display: block;
+    }
+
+    input[type="radio"]:checked ~ .foldout {
+        display: block;
+    }
+}
+
+// Select
+
+select {
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-position: right 0 center;
+    background-origin: border-box;
+    margin: 0;
+
+    @include breakpoint(small only) {
+        font-size: rem-calc(14);
+    }
+
+    &:focus {
+        border: 0;
+        border-bottom: 1px solid $primary-color;
+        box-shadow: none;
+    }
+
+    &.select-textlink {
+        padding: 0 16px 0 6px;
+        border-bottom: 0;
+        height: auto;
+
+        &:focus {
+            outline: -webkit-focus-ring-color auto 5px;
+        }
+    }
+}
+
+/* Form validation */
+label {
+    &.is-invalid-label {
+        input,
+        .checkbox-label::before,
+        select {
+            border-color: $error-color !important;
+        }
+    }
+}
+
+.errors-list,
+.parsley-errors-list {
+    .form-error,
+    .parsley-error {
+        color: $error-color;
+        margin-top: rem-calc(7);
+        margin-bottom: 0;
+        font-size: rem-calc(11);
+        font-weight: 500;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iR3JvdXAiIGZpbGw9IiNjMDAiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNiwzIEMyMy4yLDMgMjksOC44IDI5LDE2IEMyOSwyMy4yIDIzLjIsMjkgMTYsMjkgQzguOCwyOSAzLDIzLjIgMywxNiBDMyw4LjggOC44LDMgMTYsMyBMMTYsMyBaIE0xNiwwIEM3LjIsMCAwLDcuMiAwLDE2IEMwLDI0LjggNy4yLDMyIDE2LDMyIEMyNC44LDMyIDMyLDI0LjggMzIsMTYgQzMyLDcuMiAyNC44LDAgMTYsMCBMMTYsMCBaIiBpZD0iU2hhcGUiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIHg9IjE0LjUiIHk9IjciIHdpZHRoPSIzIiBoZWlnaHQ9IjEwIj48L3JlY3Q+ICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgeD0iMTQuNSIgeT0iMjEiIHdpZHRoPSIzIiBoZWlnaHQ9IjQiPjwvcmVjdD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+        background-repeat: no-repeat;
+        background-size: 11px 11px;
+        background-position: 0 2px;
+        padding: 0 0 0 20px;
+    }
+}

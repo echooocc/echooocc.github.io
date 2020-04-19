@@ -1,0 +1,43 @@
+@mixin fonts {
+    @font-face {
+        font-family: "Jil-Futura";
+        src: url("../fonts/FuturaStd-Light.woff2") format("woff2"), url("../fonts/FuturaStd-Light.woff") format("woff"),
+            url("../fonts/FuturaStd-Light.otf") format("opentype");
+        font-style: normal;
+        font-weight: 200;
+    }
+
+    @font-face {
+        font-family: "Jil-Futura";
+        src: url("../fonts/FuturaStd-Book.woff2") format("woff2"), url("../fonts/FuturaStd-Book.woff") format("woff"),
+            url("../fonts/FuturaStd-Book.otf") format("opentype");
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "Jil-Futura";
+        src: url("../fonts/FuturaStd-Medium.woff2") format("woff2"),
+            url("../fonts/FuturaStd-Medium.woff") format("woff"),
+            url("../fonts/FuturaStd-Medium.otf") format("opentype");
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    @font-face {
+        font-family: "Jil-Futura";
+        src: url("../fonts/FuturaStd-Heavy.woff2") format("woff2"), url("../fonts/FuturaStd-Heavy.woff") format("woff"),
+            url("../fonts/FuturaStd-Heavy.otf") format("opentype");
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: "Jil-Futura";
+        src: url("../fonts/FuturaStd-ExtraBold.woff2") format("woff2"),
+            url("../fonts/FuturaStd-ExtraBold.woff") format("woff"),
+            url("../fonts/FuturaStd-ExtraBold.otf") format("opentype");
+        font-style: normal;
+        font-weight: 700;
+    }
+}

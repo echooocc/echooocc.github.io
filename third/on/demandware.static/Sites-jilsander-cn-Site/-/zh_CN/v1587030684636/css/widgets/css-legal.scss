@@ -1,0 +1,95 @@
+$include-fonts: false;
+
+@import "../setup/settings";
+
+.legal-wrapper {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+
+    @include breakpoint(medium up) {
+        max-width: 320px;
+        padding: 0;
+    }
+}
+
+.legal-wrapper .title {
+    border-bottom: 1px solid #000;
+    padding-bottom: 13px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    display: block;
+    text-transform: none;
+
+    @include breakpoint(small only) {
+        font-size: 14px;
+    }
+}
+
+.legal-wrapper .subtitle {
+    text-transform: none;
+}
+
+.legal-wrapper .subtitle,
+.legal-wrapper p {
+    font-size: 12px;
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    font-weight: 400;
+    display: block;
+
+    @include breakpoint(small only) {
+        font-size: 14px;
+    }
+}
+
+.legal-wrapper > ul > li {
+    margin-top: 30px;
+    padding: 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.legal-wrapper > ul > li:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.legal-wrapper ul ul {
+    margin-left: 25px;
+}
+
+.legal-wrapper ul ul li {
+    padding-left: 16px;
+    position: relative;
+}
+
+.legal-wrapper ul ul li::before {
+    content: "\2013";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.legal-wrapper .accordion-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.trigger-toggle {
+    padding: 16px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.trigger-toggle::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,60 @@
+.caption {
+    letter-spacing: 0.08em;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    font-size: rem-calc(14);
+    margin: 10px 0 0;
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(10);
+    }
+
+    @include breakpoint(medium down) {
+        margin: 15px 0 80px;
+    }
+
+    &.text-padding {
+        padding: 0 10px;
+    }
+
+    p {
+        letter-spacing: 0.08em;
+        margin: 0 0 6px;
+    }
+
+    .price {
+        margin-left: 5px;
+    }
+
+    &-single-row {
+        display: block;
+    }
+
+    &-box {
+        margin: 20px auto 80px;
+        max-width: 400px;
+
+        @include breakpoint(small only) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @include breakpoint(medium) {
+            margin: 30px auto 80px;
+        }
+    }
+
+    &-columns {
+        display: flex;
+        flex-direction: row;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: space-evenly;
+    }
+}
+
+.sticky-title-bottom {
+    position: sticky;
+    bottom: 0;
+    padding-top: 30px;
+}

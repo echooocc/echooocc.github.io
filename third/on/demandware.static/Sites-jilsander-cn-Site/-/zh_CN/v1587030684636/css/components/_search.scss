@@ -1,0 +1,124 @@
+$height-header: 38px;
+$height-header-mobile: 50px;
+
+#search {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #fbfbf6;
+    margin: 0;
+    padding-top: 94px;
+
+    @include breakpoint(medium) {
+        padding-top: 175px;
+    }
+
+    &.search-visible {
+        display: block;
+    }
+
+    .search-field {
+        max-width: 320px;
+        margin: 0 auto;
+        text-transform: none;
+        padding: 6px 0;
+        font-size: 14px;
+        display: block;
+
+        @include breakpoint(medium) {
+            font-size: 12px;
+        }
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.2);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.body-fix {
+    overflow: hidden;
+}
+
+.search-open {
+    .page {
+        max-height: 100vh;
+        overflow: hidden;
+    }
+}
+
+.suggestions-wrapper {
+    &:not(:empty) {
+        + .suggestions-spacer {
+            display: none;
+        }
+    }
+}
+
+.suggestions-spacer {
+    min-height: calc(100vh - 125px);
+}
+
+.suggestions {
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: 20px;
+    min-height: calc(100vh - 125px);
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px 20px;
+        margin: 0 15px;
+        margin-top: 60px;
+
+        @include breakpoint(medium) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px 60px;
+            margin: 95px 60px;
+        }
+
+        &-image {
+            max-width: 750px;
+        }
+
+        &-description {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 0 0;
+
+            p {
+                margin-bottom: 1px;
+            }
+
+            @include breakpoint(medium) {
+                padding: 10px 20px 0;
+            }
+        }
+
+        
+    }
+
+    .view-all {
+        margin: 200px auto 50px;
+
+        button {
+            border-bottom: 1px map_get($jil-palette, "medium-gray") solid;
+            text-transform: uppercase;
+
+            @include breakpoint(medium up) {
+                font-size: 10px;
+            }
+
+            &:hover {
+                border-color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+// BUTTONS
+
+// Default button
+
+.button,
+a.button {
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    line-height: 1.4em;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid $medium-gray;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: map-get($button-sizes, small);
+
+    @include breakpoint(medium up) {
+        padding: 8px 20px 5px;
+        font-size: map-get($button-sizes, default);
+    }
+
+    &:hover {
+        border-color: $primary-color;
+
+        @include breakpoint(medium up) {
+            padding: 8px 20px 5px;
+        }
+    }
+
+    // Transparent button
+
+    &.button-transparent {
+        border-color: transparent;
+        color: $dark-gray;
+
+        &:hover {
+            color: $primary-color;
+            background: transparent;
+            border-color: $primary-color;
+        }
+    }
+
+    // Large button
+
+    &.button-large {
+        padding: 17px 20px 14px;
+
+        @include breakpoint(medium up) {
+            padding: 11px 20px 8px;
+        }
+    }
+
+    // Largest button
+
+    &.button-largest {
+        padding: 20px 20px 18px;
+        background-color: $light-primary-color;
+        color: $secondary-color;
+
+        &:hover {
+            background-color: transparent;
+            color: $primary-color;
+        }
+    }
+
+    &.button-fullwidth {
+        width: 100%;
+        display: block;
+    }
+
+    &.button-margin-top {
+        margin-top: rem-calc(80);
+
+        @include breakpoint(medium) {
+            margin-top: rem-calc(40);
+        }
+    }
+
+    &.button-border-big {
+        border: 2px solid $light-primary-color;
+    }
+
+    &[disabled] {
+        cursor: pointer;
+
+        &:hover, &:focus {
+            cursor: pointer;
+        }
+    }
+}

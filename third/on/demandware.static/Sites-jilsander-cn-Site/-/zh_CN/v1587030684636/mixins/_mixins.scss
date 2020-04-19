@@ -1,0 +1,112 @@
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+@mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
+    display: block;
+    width: $arrow-width;
+    height: $arrow-height;
+    border: solid $arrow-color;
+    border-width: 0 $arrow-border-width $arrow-border-width 0;
+
+    @if ($arrow-direction==down) {
+        transform: rotate(45deg);
+    } @else if ($arrow-direction==up) {
+        transform: rotate(-135deg);
+    } @else if ($arrow-direction==right) {
+        transform: rotate(-45deg);
+    } @else if ($arrow-direction==left) {
+        transform: rotate(135deg);
+    }
+}
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+    @include pseudo($pos: $position);
+
+    width: 0;
+    height: 0;
+
+    @if $round {
+        border-radius: 3px;
+    }
+
+    @if $direction==down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round($size / 2.5);
+    } @else if $direction==up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round($size / 2.5);
+    } @else if $direction==right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if $direction==left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+@mixin wishlist-grid {
+    &.grid-x {
+        @include xy-gutters($gutters: -20px);
+    }
+
+    .account-wishlist-item,
+    .product-info {
+        &.cell {
+            @include xy-cell($size: 1 of 2, $gutters: 20px);
+
+            @include breakpoint(medium) {
+                @include xy-cell($size: 1 of 4, $gutters: 20px);
+            }
+        }
+    }
+}
+@mixin password-toggle {
+    position: relative;
+
+    .password-visibility-toggle {
+        position: absolute;
+        right: 0;
+        top: 7px;
+        color: map_get($jil-palette, "dark-grey");
+        z-index: 2;
+        opacity: 0.45;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .eye-off {
+            display: none;
+        }
+
+        &.password-visible {
+            .eye-off {
+                display: block;
+            }
+
+            .eye {
+                display: none;
+            }
+        }
+    }
+}
+@mixin card-header-action {
+    margin-left: 12px;
+    color: map_get($jil-palette, "black");
+    border-bottom: 1px solid transparent;
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+        border-color: $black;
+    }
+}

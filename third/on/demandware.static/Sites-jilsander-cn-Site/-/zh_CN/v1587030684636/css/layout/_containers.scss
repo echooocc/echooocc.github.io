@@ -1,0 +1,47 @@
+//
+// Presentational line break. To be preferred over <hr/> when semantic is not concerned
+// Example of usage: <span class="cell line-break bg-light-gray"></span>
+//
+.line-break {
+    display: block;
+    height: rem-calc(1);
+}
+
+.spacer {
+    height: rem-calc(30);
+
+    &.small {
+        height: rem-calc(10);
+    }
+
+    &.large {
+        height: rem-calc(60);
+    }
+}
+
+.separator {
+    height: rem-calc(15);
+    border-bottom: 1px solid;
+    margin-bottom: rem-calc(15);
+
+    &.small {
+        height: rem-calc(5);
+        margin-bottom: rem-calc(5);
+    }
+
+    &.large {
+        height: rem-calc(30);
+        margin-bottom: rem-calc(30);
+    }
+
+    &.muted {
+        opacity: 0.15;
+    }
+
+    @include breakpoint(small only) {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+

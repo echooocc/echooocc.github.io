@@ -1,0 +1,301 @@
+.submenu-box-newsletter {
+    label {
+        &.newsletter-box-label {
+            color: $black;
+            position: relative;
+            display: block;
+            font-size: rem-calc(10);
+
+            @include breakpoint(medium down) {
+                font-size: rem-calc(12);
+            }
+        }
+    }
+
+    a {
+        &.newsletter-cancel {
+            position: absolute;
+            right: 0;
+            color: rgba(0, 0, 0, 0.5);
+            display: none;
+
+            &:hover {
+                border: none;
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+
+    .newsletter-input-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+
+        input[type="email"] {
+            margin: 0 !important;
+            outline: none;
+        }
+
+        span:not(.form-error) {
+            display: flex;
+            align-items: center;
+            min-height: 31px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+            @include breakpoint(medium down) {
+                min-height: 34px;
+            }
+        }
+
+        a {
+            display: none;
+            align-items: center;
+            border: 0;
+
+            &:hover {
+                border-bottom: none;
+            }
+
+            svg {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .newsletter-content {
+        display: none;
+    }
+
+    .newsletter-interest-box {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .form-field {
+        margin-left: 10px;
+        margin-right: 0;
+
+        a {
+            display: inline;
+        }
+
+        &.no-margin {
+            margin: 0;
+        }
+
+        .checkbox-label {
+            &.terms {
+                font-size: 12px;
+                line-height: 1.3em;
+                letter-spacing: 0.02em;
+            }
+        }
+
+        input[type="checkbox"] {
+            + .checkbox-label {
+                &::before {
+                    top: 6px;
+                }
+
+                &::after {
+                    top: 9px;
+                }
+            }
+        }
+
+        &.has-links {
+            input[type="checkbox"] {
+                + .checkbox-label {
+                    &::before {
+                        top: 2px;
+                    }
+
+                    &::after {
+                        top: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .newsletter-legal {
+        font-size: 10px;
+        height: 30px;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        &.open {
+            height: auto;
+        }
+    }
+
+    .newsletter-read-more {
+        display: inline-block !important;
+        vertical-align: middle;
+        font-size: 12px;
+        line-height: 1.3em;
+        letter-spacing: 0.02em;
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+
+    .newsletter-feedback {
+        display: none;
+
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
+
+        .go-to-home {
+            display: none;
+        }
+    }
+
+    .newsletter-box-label-secondary {
+        display: none;
+        margin-bottom: 20px;
+
+        span {
+            float: right;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+.newsletter-page-wrapper {
+    margin: 0 auto;
+
+    @include breakpoint(large up) {
+        width: 320px;
+        margin-top: 120px;
+        min-height: calc(100vh - 220px);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include breakpoint(medium down) {
+        margin-top: 150px;
+        padding: 0 30px;
+    }
+
+    .newsletter-content {
+        display: block;
+
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
+    }
+
+    .newsletter-interest-box {
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        @include breakpoint(medium down) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    }
+
+    label {
+        &.newsletter-box-label {
+            display: none;
+        }
+    }
+
+    .newsletter-input-wrapper {
+        display: block;
+
+        span:not(.form-error) {
+            display: none;
+        }
+    }
+
+    .newsletter-box-label-secondary {
+        display: block;
+
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
+    }
+
+    .submenu-box-newsletter {
+        .newsletter-legal {
+            margin-bottom: 0;
+        }
+    }
+
+    .form-field {
+        input[type="checkbox"] {
+            + .checkbox-label {
+                &::before {
+                    top: 4px;
+                }
+
+                &::after {
+                    top: 7px;
+                }
+            }
+        }
+
+        &.has-links {
+            input[type="checkbox"] {
+                + .checkbox-label {
+                    &::before {
+                        top: 2px;
+                    }
+
+                    &::after {
+                        top: 5px;
+                    }
+
+                    &.terms {
+                        line-height: 1.5;
+
+                        @include breakpoint(medium down) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .newsletter-submit {
+        min-height: 35px;
+
+        @include breakpoint(medium down) {
+            min-height: 45px;
+        }
+    }
+
+    .newsletter-legal {
+        @include breakpoint(medium down) {
+            font-size: 12px;
+            height: 34px;
+        }
+    }
+
+    .newsletter-read-more {
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        opacity: 1;
+
+        @include breakpoint(medium down) {
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    .newsletter-feedback {
+        .go-to-home {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    }
+}

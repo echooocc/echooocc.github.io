@@ -1,0 +1,70 @@
+$foundation-palette: (
+    black: #000,
+    darkgrey: #555,
+    lightgrey: #ccc,
+    whitesmoke: #f7f7f7,
+    white: #fff,
+    success: #58be6b,
+    warning: #f8b13b,
+    alert: #c82828,
+    featured: #d0021b,
+    successform: #7ed321,
+    primary: #000,
+    secondary: #fbfbf6,
+);
+
+$jil-palette: (
+    black: #000,
+    white: #fbfbf6,
+    off-white: #f9f7ef,
+    lightest-gray: rgba(0, 0, 0, 0.1),
+    light-gray: rgba(0, 0, 0, 0.2),
+    medium-gray: rgba(0, 0, 0, 0.4),
+    dark-gray: rgba(0, 0, 0, 0.65),
+    darkest-gray: rgba(0, 0, 0, 0.8),
+    error: #c00,
+    light-black: #080f21,
+);
+
+// COLORS
+$black: map-get($foundation-palette, black);
+$darkgrey: map-get($foundation-palette, darkgrey);
+$lightgrey: map-get($foundation-palette, lightgrey);
+$whitesmoke: map-get($foundation-palette, whitesmoke);
+$white: map-get($foundation-palette, white);
+$light-black: map-get($foundation-palette, light-black);
+
+$success: map-get($foundation-palette, success);
+$warning: map-get($foundation-palette, warning);
+$error: map-get($foundation-palette, alert);
+$featured: map-get($foundation-palette, featured);
+$success-form: map-get($foundation-palette, successform);
+
+// JILSANDER COLORS
+$primary-color: map-get($jil-palette, black);
+$secondary-color: map-get($jil-palette, white);
+$light-primary-color: map-get($jil-palette, light-black);
+
+$body-background: map-get($jil-palette, white);
+$body-font-color: map-get($jil-palette, black);
+
+$off-white: map-get($jil-palette, off-white);
+
+$lightest-gray: map-get($jil-palette, lightest-gray);
+$light-gray: map-get($jil-palette, light-gray);
+$medium-gray: map-get($jil-palette, medium-gray);
+$dark-gray: map-get($jil-palette, dark-gray);
+$darkest-gray: map-get($jil-palette, darkest-gray);
+$error-color: map-get($jil-palette, error);
+
+/// @param {Map} $jil-palette - colors map
+
+@each $name, $color in $jil-palette {
+    .color-#{$name} {
+        color: $color !important;
+    }
+
+    .bg-#{$name} {
+        background-color: $color !important;
+    }
+}
